@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Mímica</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
+</head>
+<body>
+    <!-- Tela de configuração -->
+    <div id="setup-screen" class="screen">
+        <h1>Jogo de Mímica</h1>
+        <label for="round-time">Tempo por Rodada (segundos):</label>
+        <input type="number" id="round-time" value="60" min="10" max="300">
+        
+        <label for="rounds">Quantidade de Rodadas por Equipe:</label>
+        <input type="number" id="rounds" value="15" min="1" max="50">
+        
+        <button id="start-game">Iniciar</button>
+    </div>
+
+    <!-- Tela do jogo -->
+    <div id="game-screen" class="screen hidden">
+        <div id="scoreboard">
+            <div class="team-score" id="team1-score">Equipe 1: 0</div>
+            <div class="team-score" id="team2-score">Equipe 2: 0</div>
+        </div>
+        <h2 id="current-team">Equipe Atual: Equipe 1</h2>
+        <div id="timer">60</div>
+        <div id="word-display">Sua palavra é da categoria: <span id="word-category"></span> - <span id="word"></span></div>
+        <button id="correct-btn">Acertou!</button>
+        <button id="next-team-btn" class="hidden">Próxima Equipe</button>
+    </div>
+
+    <!-- Tela de resultado -->
+    <div id="result-screen" class="screen hidden">
+        <h1>Resultado Final</h1>
+        <div id="final-score"></div>
+        <h2 id="winner"></h2>
+        <button onclick="location.reload()">Reiniciar</button>
+    </div>
+</body>
+</html>
